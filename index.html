@@ -7,22 +7,43 @@
     <link rel="stylesheet" href="style.css">
     <!-- <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'> -->
     <title>Button Progress bar</title>
+
+   
 </head>
 <body>
     <div class="progress">
-        <div class="fill a"> 50% </div>       
+        <div class="fill a" id="fill"> 50% </div>       
     </div>
     <div class="progress">
-        <div class="fill b">  50% </div>       
+        <div class="fill b" id="fill">  50% </div>       
     </div>
     <div class="progress">
-        <div class="fill c">  50% </div>       
+        <div class="fill c" id="fill">  50% </div>       
     </div>
     <div class="progress">
-        <div class="fill d">  50% </div>       
+        <div class="fill d" id="fill">  50% </div>       
     </div>
     <div class="progress">
-        <div class="fill e"> 50% </div>       
+        <div class="fill e" id="fill"> 50% </div>       
     </div>
+        <button id="btn">Finish</button>
+
+        <script>
+            var button = document.getElementById('btn');
+            button.onclick = function(){
+                var pos = 50;
+                var fill = document.getElementById('fill');
+                var t = setInterval(move,100);
+                function move(){
+                    if(pos >=100){
+                        clearInterval(t)
+                    }
+                    else{
+                        pos+=1;
+                        fill.style.width = pos+'%'
+                    }
+                }
+            };
+        </script>
 </body>
 </html>
