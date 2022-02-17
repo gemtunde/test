@@ -42,7 +42,10 @@
                     else{
                         pos+=1;
                         for(var i = 0; i < fill.length; i++) 
-                        fill[i].style.width = pos+'%'; 
+                       { fill[i].style.width = pos+'%';                        
+                        fill[i].innerText = '100%'; 
+                        
+                        }
                        // fill.style.width = pos+'%'
                     }
                 }
