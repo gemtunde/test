@@ -11,42 +11,65 @@
    
 </head>
 <body>
-    <div class="progress">
+    <!-- each section of progress bar -->
+    <div class="progress">        
         <div class="fill a" id="fill"> 50% </div>       
     </div>
+
+      <!-- each section of progress bar -->
     <div class="progress">
         <div class="fill b" id="fill">  50% </div>       
     </div>
+
+      <!-- each section of progress bar -->
     <div class="progress">
         <div class="fill c" id="fill">  50% </div>       
     </div>
+
+      <!-- each section of progress bar -->
     <div class="progress">
         <div class="fill d" id="fill">  50% </div>       
     </div>
+
+      <!-- each section of progress bar -->
     <div class="progress">
         <div class="fill e" id="fill"> 50% </div>       
     </div>
+
+          <!-- subnit button -->
         <button id="btn">Finish</button>
 
         <script>
+            //get element by id
             var button = document.getElementById('btn');
             button.onclick = function(){
+               
+               //starting position
                 var pos = 50;
-               // var fill = document.getElementById('fill');
+              
+              //select array of progress bar
                var fill = document.querySelectorAll("[id='fill']");
+
+               // progres bar ends at
                 var t = setInterval(move,100);
+                
+                //animation function for progress bar
                 function move(){
                     if(pos >=100){
                         clearInterval(t)
                     }
                     else{
                         pos+=1;
+                        //looping through the array of progress bar and counting
                         for(var i = 0; i < fill.length; i++) 
-                       { fill[i].style.width = pos+'%';                        
-                        fill[i].innerText = '100%'; 
+                       { 
+                        fill[i].style.width = pos+'%';                        
+                        
+                        //counter for progress bar
+                        fill[i].innerText =   pos+'%';                         
                         
                         }
-                       // fill.style.width = pos+'%'
+                      
                     }
                 }
             };
